@@ -351,6 +351,13 @@ export default function showDevTools(store) {
 }
 ```
 
+You should also change the default size of `DockMonitor` in `containers/DevTools.js`:
+```
+<DockMonitor toggleVisibilityKey='ctrl-h'
+                 changePositionKey='ctrl-q'
+                 defaultSize="1">
+```
+
 Personal preferences vary, and whether to put the DevTools in a separate window, in a dock, or right inside you app’s user interface, is up to you. Make sure to check the documentation for the monitors you use and learn about the different props they support for customizing the appearance and the behavior.
 
 Note that there are no useful props you can pass to the `DevTools` component other than the `store`. The `store` prop is needed if you don’t wrap `<DevTools>` in a `<Provider>`—just like with any connected component. To adjust the monitors, you need to pass props to them inside `DevTools.js` itself inside the `createDevTools()` call when they are used.
